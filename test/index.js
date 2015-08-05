@@ -25,16 +25,15 @@ var mockSuccessResponse = [
   }
 ];
 
-
 nock(TEST_URL)
-  .get('/forecast/')
+  .get('/forecast')
   .query({ spot_id: 10 })
   .reply(200, mockSuccessResponse);
 
 nock(TEST_URL)
-  .get('/forecast/')
+  .get('/forecast')
   .query({ spot_id: -1 })
-  .reply(501, mockErrorResponse);
+  .reply(200, mockErrorResponse);
 
 test('exports function and calling it returns object with method', function (t) {
   t.plan(3);
