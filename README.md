@@ -1,10 +1,10 @@
-# magicseaweed
+# magicseaweed [![Build Status](https://travis-ci.org/rogeriopvl/magicseaweed.svg?branch=master)](https://travis-ci.org/rogeriopvl/magicseaweed)
 
 Magicseaweed simple and lightweigth API wrapper. For more details on the api please check the [Documentation](http://magicseaweed.com/developer/forecast-api).
 
 ## Install
 
-    npm install magicseaweed
+    npm install --save magicseaweed
 
 ## Usage examples
 
@@ -32,11 +32,11 @@ Msw.forecast(params, function (err, data) {
 ## API
 
 #### Msw.forecast(params, callback)
-- `params` : hash containing all the params to send to the API via querystring
-  - `params.spot_id` : {number} (required) the id of the spot
-  - `params.units` : {string} (optional) the units for the response values (eu, us, uk) (default: us)
-  - `params.fields`: {array} (optional) select what fields to include in the response
-- `callback` : {function} the callback function, will be passed `err` and `data` as arguments
+- `params {object}` hash containing all the params to send to the API via querystring
+  - `params.spot_id {number}` (required) the id of the spot
+  - `params.units {string}` (optional) the units for the response values (eu, us, uk) (default: us)
+  - `params.fields {array | string}` (optional) select what fields to include in the response
+- `callback {function}` the callback function, will be passed `err` and `data` as arguments
 
 Anything else you add to the params hash will be added to the querystring of the API request.
 
