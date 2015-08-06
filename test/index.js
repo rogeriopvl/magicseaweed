@@ -44,33 +44,33 @@ test('exports function and calling it returns object with method', function (t) 
   var msw = MSW(TEST_API_KEY);
   t.equals(typeof MSW, 'function');
   t.equals(typeof msw, 'object');
-  t.equals(typeof msw.getForecast, 'function');
+  t.equals(typeof msw.forecast, 'function');
 
 });
 
-test('getForecast called correctly', function (t) {
+test('forecast called correctly', function (t) {
   t.plan(2);
   var msw = MSW(TEST_API_KEY);
-  msw.getForecast({ spot_id: 10 }, function (err, data) {
+  msw.forecast({ spot_id: 10 }, function (err, data) {
     t.error(err);
     t.equals(typeof data, 'object');
   });
 });
 
-test('getForecast called with wrong or missing spot_id', function (t) {
+test('forecast called with wrong or missing spot_id', function (t) {
   t.plan(3);
   var msw = MSW(TEST_API_KEY);
-  msw.getForecast({ spot_id: -1 }, function (err, data) {
-    t.error(err);
-    t.equals(typeof data, 'object');
-    t.equals(data.error_response.code, 501);
+  msw.forecast({ spot_id: -1 }, function (err, data) {
+    t.ok(err);
+    t.ok(err instanceof Error);
+    t.notOk(data);
   });
 });
 
-test('getForecast with specified fields', function (t) {
+test('forecast with specified fields', function (t) {
   t.plan(2);
   var msw = MSW(TEST_API_KEY);
-  msw.getForecast({
+  msw.forecast({
     spot_id: 10, fields: ['swell.*', 'timestamp']
   }, function (err, data) {
     t.error(err);
