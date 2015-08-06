@@ -35,6 +35,10 @@ nock(TEST_URL)
   .query({ spot_id: -1 })
   .reply(200, mockErrorResponse);
 
+nock(TEST_URL)
+  .get('/forecast?spot_id=10&fields=swell.%2A%2Ctimestamp')
+  .reply(200, mockSuccessResponse);
+
 test('exports function and calling it returns object with method', function (t) {
   t.plan(3);
   var msw = MSW(TEST_API_KEY);
@@ -60,5 +64,16 @@ test('getForecast called with wrong or missing spot_id', function (t) {
     t.error(err);
     t.equals(typeof data, 'object');
     t.equals(data.error_response.code, 501);
+  });
+});
+
+test('getForecast with specified fields', function (t) {
+  t.plan(2);
+  var msw = MSW(TEST_API_KEY);
+  msw.getForecast({
+    spot_id: 10, fields: ['swell.*', 'timestamp']
+  }, function (err, data) {
+    t.error(err);
+    t.equals(typeof data, 'object');
   });
 });

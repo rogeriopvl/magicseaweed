@@ -7,9 +7,11 @@ module.exports = function (apiKey) {
 
   return {
     getForecast: function (params, cb) {
-      var querystring = { spot_id: params.spot_id };
+      if (typeof params.fields === 'object') {
+        params.fields = params.fields.join(',');
+      }
       request(
-        { uri: uri, json: true, method: 'GET', qs: querystring },
+        { uri: uri, json: true, method: 'GET', qs: params },
         function (err, res, body) {
           if (typeof cb === 'function') {
             if (err) { return cb(err); }
