@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rogeriopvl/node-magicseaweed.git"
+    "url": "git+https://github.com/rogeriopvl/magicseaweed.git"
   },
   "keywords": [
     "magicseaweed",
@@ -22,9 +22,9 @@
   "author": "rogeriopvl",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rogeriopvl/node-magicseaweed/issues"
+    "url": "https://github.com/rogeriopvl/magicseaweed/issues"
   },
-  "homepage": "https://github.com/rogeriopvl/node-magicseaweed#readme",
+  "homepage": "https://github.com/rogeriopvl/magicseaweed#readme",
   "dependencies": {
     "request": "^2.60.0"
   },
