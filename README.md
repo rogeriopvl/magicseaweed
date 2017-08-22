@@ -1,5 +1,7 @@
 # magicseaweed [![Build Status](https://travis-ci.org/rogeriopvl/magicseaweed.svg?branch=master)](https://travis-ci.org/rogeriopvl/magicseaweed)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/magicseaweed.svg)](https://greenkeeper.io/)
+
 Magicseaweed simple and lightweigth API wrapper. For more details on the api please check the [Documentation](http://magicseaweed.com/developer/forecast-api).
 
 ## Install
