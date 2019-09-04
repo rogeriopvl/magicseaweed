@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/rogeriopvl/magicseaweed#readme",
   "dependencies": {
-    "request": "^2.82.0"
+    "request": "^2.88.0"
   },
   "devDependencies": {
-    "nock": "^10.0.0",
-    "tape": "^4.8.0"
+    "nock": "^11.3.2",
+    "tape": "^4.11.0"
   }
 }
